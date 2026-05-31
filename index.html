@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thiên Mệnh – Khám Phá Thiên Mệnh Của Bạn</title>
+  <meta name="description" content="Thiên Mệnh – Nền tảng chiêm tinh học kết hợp tử vi phương Đông và hoàng đạo phương Tây. Xem lá số miễn phí, hợp duyên, hạn vận 2025." />
+  <meta name="keywords" content="tử vi, hoàng đạo, lá số, chiêm tinh, bát tự, ngũ hành, hợp duyên, hạn vận" />
+  <meta property="og:title" content="Thiên Mệnh – Khám Phá Thiên Mệnh Của Bạn" />
+  <meta property="og:description" content="Lá số tử vi, cung hoàng đạo, hợp duyên và hạn vận 2025 bằng AI" />
+  <meta property="og:type" content="website" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Thiên Mệnh",
+    "description": "Nền tảng chiêm tinh học Đông Tây kết hợp",
+    "url": "https://thienmenh.vn"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="dark-mode" data-theme="dark">
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════════════ -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#hero" class="nav-logo">
+      <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="18" stroke="url(#logoGrad)" stroke-width="1.5"/>
+        <circle cx="20" cy="20" r="10" stroke="url(#logoGrad)" stroke-width="1"/>
+        <circle cx="20" cy="20" r="3" fill="url(#logoGrad)"/>
+        <line x1="20" y1="2" x2="20" y2="8" stroke="url(#logoGrad)" stroke-width="1.5"/>
+        <line x1="20" y1="32" x2="20" y2="38" stroke="url(#logoGrad)" stroke-width="1.5"/>
+        <line x1="2" y1="20" x2="8" y2="20" stroke="url(#logoGrad)" stroke-width="1.5"/>
+        <line x1="32" y1="20" x2="38" y2="20" stroke="url(#logoGrad)" stroke-width="1.5"/>
+        <defs>
+          <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#C9A84C"/>
+            <stop offset="100%" stop-color="#9B59B6"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span>Thiên Mệnh</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#hero" class="nav-link active">Trang Chủ</a>
+      <a href="#tuvi" class="nav-link">Lá Số Tử Vi</a>
+      <a href="#hoangdao" class="nav-link">Hoàng Đạo</a>
+      <a href="#hopduyen" class="nav-link">Hợp Duyên</a>
+      <a href="#hanvan" class="nav-link">Hạn Vận</a>
+      <a href="#blog" class="nav-link">Blog</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Đổi giao diện">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+      <a href="#login" class="btn-login">Đăng Nhập</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <canvas id="starCanvas"></canvas>
+
+  <!-- Zodiac wheel SVG background -->
+  <div class="zodiac-wheel-bg" aria-hidden="true">
+    <svg id="zodiacWheel" viewBox="0 0 500 500" fill="none">
+      <g class="wheel-outer">
+        <circle cx="250" cy="250" r="240" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
+        <circle cx="250" cy="250" r="200" stroke="rgba(201,168,76,0.1)" stroke-width="0.5"/>
+        <circle cx="250" cy="250" r="160" stroke="rgba(155,89,182,0.12)" stroke-width="0.5"/>
+        <circle cx="250" cy="250" r="120" stroke="rgba(201,168,76,0.08)" stroke-width="0.5"/>
+      </g>
+      <!-- 12 division lines -->
+      <g class="wheel-lines" stroke="rgba(201,168,76,0.12)" stroke-width="0.8">
+        <line x1="250" y1="10" x2="250" y2="490"/>
+        <line x1="10" y1="250" x2="490" y2="250"/>
+        <line x1="83" y1="83" x2="417" y2="417"/>
+        <line x1="417" y1="83" x2="83" y2="417"/>
+        <line x1="46" y1="166" x2="454" y2="334"/>
+        <line x1="454" y1="166" x2="46" y2="334"/>
+      </g>
+      <!-- Zodiac symbols -->
+      <g class="zodiac-symbols" fill="rgba(201,168,76,0.4)" font-size="18" text-anchor="middle" dominant-baseline="middle" font-family="serif">
+        <text x="250" y="22">♈</text>
+        <text x="373" y="55">♉</text>
+        <text x="456" y="160">♊</text>
+        <text x="478" y="270">♋</text>
+        <text x="443" y="376">♌</text>
+        <text x="352" y="455">♍</text>
+        <text x="250" y="478">♎</text>
+        <text x="148" y="455">♏</text>
+        <text x="57" y="376">♐</text>
+        <text x="22" y="270">♑</text>
+        <text x="44" y="160">♒</text>
+        <text x="127" y="55">♓</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-star">✦</span>
+      <span>Thiên Văn Học · Tử Vi · Hoàng Đạo</span>
+      <span class="badge-star">✦</span>
+    </div>
+    <h1 class="hero-title">
+      Khám Phá<br/>
+      <em>Thiên Mệnh</em><br/>
+      Của Bạn
+    </h1>
+    <p class="hero-subtitle">Kết hợp trí tuệ ngàn năm của Tử Vi phương Đông và Chiêm Tinh phương Tây — cùng AI luận giải chuyên sâu bằng tiếng Việt</p>
+
+    <!-- FORM -->
+    <form class="hero-form" id="heroForm" onsubmit="submitHeroForm(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fullName">Họ và tên</label>
+          <input type="text" id="fullName" placeholder="Nguyễn Văn An" required />
+        </div>
+        <div class="form-group">
+          <label for="gender">Giới tính</label>
+          <select id="gender" required>
+            <option value="">Chọn giới tính</option>
+            <option value="nam">Nam</option>
+            <option value="nu">Nữ</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="birthDate">Ngày sinh</label>
+          <input type="date" id="birthDate" required />
+        </div>
+        <div class="form-group">
+          <label for="birthTime">Giờ sinh</label>
+          <input type="time" id="birthTime" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group form-full">
+          <label for="birthPlace">Nơi sinh</label>
+          <input type="text" id="birthPlace" placeholder="Hà Nội, Việt Nam" />
+        </div>
+      </div>
+      <button type="submit" class="btn-cta">
+        <span class="btn-icon">✦</span>
+        Xem Lá Số Miễn Phí
+        <span class="btn-shine"></span>
+      </button>
+    </form>
+
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">240K+</span><span class="stat-label">Lá số đã luận giải</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Đánh giá hài lòng</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">AI</span><span class="stat-label">Luận giải thông minh</span></div>
+    </div>
+  </div>
+
+  <div class="scroll-hint" onclick="document.querySelector('#tuvi').scrollIntoView({behavior:'smooth'})">
+    <span>Khám phá thêm</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     LÁ SỐ TỬ VI
+═══════════════════════════════════════════════════════ -->
+<section class="section" id="tuvi">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-badge">✦ Tử Vi Đẩu Số ✦</div>
+      <h2 class="section-title">Lá Số Tử Vi</h2>
+      <p class="section-desc">12 cung vị theo hệ thống Tử Vi Đẩu Số — truyền thống ngàn năm của người phương Đông</p>
+    </div>
+
+    <div class="tuvi-layout">
+      <!-- Wheel -->
+      <div class="tuvi-wheel-wrapper">
+        <canvas id="tuviCanvas" width="420" height="420"></canvas>
+        <div class="tuvi-center-info" id="tuviCenterInfo">
+          <div class="center-symbol">☽</div>
+          <div class="center-label">Mệnh Cung</div>
+          <div class="center-value">Dần</div>
+        </div>
+      </div>
+
+      <!-- Info Panel -->
+      <div class="tuvi-info">
+        <div class="tuvi-profile">
+          <h3>Thông Tin Bát Tự</h3>
+          <div class="batu-grid">
+            <div class="batu-col">
+              <div class="batu-label">Năm</div>
+              <div class="batu-can">Giáp</div>
+              <div class="batu-chi">Tý</div>
+              <div class="batu-hanh element-water">Thủy</div>
+            </div>
+            <div class="batu-col">
+              <div class="batu-label">Tháng</div>
+              <div class="batu-can">Canh</div>
+              <div class="batu-chi">Tuất</div>
+              <div class="batu-hanh element-earth">Thổ</div>
+            </div>
+            <div class="batu-col">
+              <div class="batu-label">Ngày</div>
+              <div class="batu-can">Bính</div>
+              <div class="batu-chi">Ngọ</div>
+              <div class="batu-hanh element-fire">Hỏa</div>
+            </div>
+            <div class="batu-col">
+              <div class="batu-label">Giờ</div>
+              <div class="batu-can">Mậu</div>
+              <div class="batu-chi">Thìn</div>
+              <div class="batu-hanh element-earth">Thổ</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nguhanh-chart">
+          <h3>Tỷ Lệ Ngũ Hành</h3>
+          <div class="element-bars">
+            <div class="element-bar">
+              <span class="el-name element-wood">Mộc</span>
+              <div class="el-track"><div class="el-fill element-wood" style="--pct:25%"></div></div>
+              <span class="el-pct">25%</span>
+            </div>
+            <div class="element-bar">
+              <span class="el-name element-fire">Hỏa</span>
+              <div class="el-track"><div class="el-fill element-fire" style="--pct:35%"></div></div>
+              <span class="el-pct">35%</span>
+            </div>
+            <div class="element-bar">
+              <span class="el-name element-earth">Thổ</span>
+              <div class="el-track"><div class="el-fill element-earth" style="--pct:20%"></div></div>
+              <span class="el-pct">20%</span>
+            </div>
+            <div class="element-bar">
+              <span class="el-name element-metal">Kim</span>
+              <div class="el-track"><div class="el-fill element-metal" style="--pct:10%"></div></div>
+              <span class="el-pct">10%</span>
+            </div>
+            <div class="element-bar">
+              <span class="el-name element-water">Thủy</span>
+              <div class="el-track"><div class="el-fill element-water" style="--pct:10%"></div></div>
+              <span class="el-pct">10%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menh-cung-detail">
+          <h3>Mệnh Cung Dần – Hổ</h3>
+          <p>Người có mệnh cung Dần thường mang khí thế mạnh mẽ, độc lập và đầy hoài bão. Bản tính lãnh đạo, dũng cảm đối mặt với thử thách...</p>
+          <div class="tuvi-tags">
+            <span class="tag tag-wood">Ngũ hành: Mộc</span>
+            <span class="tag tag-positive">Dương</span>
+            <span class="tag">Thiên Phủ thủ mệnh</span>
+          </div>
+        </div>
+
+        <button class="btn-secondary" onclick="showSection('tuvi-detail')">Xem Chi Tiết 12 Cung →</button>
+      </div>
+    </div>
+
+    <!-- 12 Cung Grid -->
+    <div class="cung-grid" id="cungGrid">
+      <!-- populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     CUNG HOÀNG ĐẠO
+═══════════════════════════════════════════════════════ -->
+<section class="section section-alt" id="hoangdao">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-badge">✦ Chiêm Tinh Tây Phương ✦</div>
+      <h2 class="section-title">12 Cung Hoàng Đạo</h2>
+      <p class="section-desc">Khám phá tính cách, tình yêu, sự nghiệp và sức khỏe theo cung hoàng đạo của bạn</p>
+    </div>
+
+    <div class="zodiac-selector">
+      <div class="zodiac-tabs" id="zodiacTabs">
+        <!-- populated by JS -->
+      </div>
+    </div>
+
+    <div class="zodiac-profile" id="zodiacProfile">
+      <!-- populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     HỢP DUYÊN
+═══════════════════════════════════════════════════════ -->
+<section class="section" id="hopduyen">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-badge">✦ Thiên Duyên ✦</div>
+      <h2 class="section-title">Hợp Duyên Đôi Lứa</h2>
+      <p class="section-desc">Kiểm tra độ tương hợp giữa hai người dựa trên lá số tử vi và cung hoàng đạo</p>
+    </div>
+
+    <div class="hopduyen-layout">
+      <div class="hd-person">
+        <div class="hd-avatar hd-avatar-1">
+          <svg viewBox="0 0 80 80" fill="none">
+            <circle cx="40" cy="30" r="18" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10 70c0-16.57 13.43-30 30-30s30 13.43 30 30" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3>Người Thứ Nhất</h3>
+        <form class="hd-form">
+          <input type="text" placeholder="Họ và tên" class="hd-input" />
+          <input type="date" class="hd-input" />
+          <select class="hd-input">
+            <option value="">Giới tính</option>
+            <option>Nam</option>
+            <option>Nữ</option>
+          </select>
+        </form>
+      </div>
+
+      <div class="hd-vs">
+        <div class="hd-heart">
+          <svg viewBox="0 0 60 60" fill="none">
+            <path d="M30 50s-22-14-22-28a12 12 0 0124 0 12 12 0 0124 0C56 36 30 50 30 50z" stroke="url(#heartGrad)" stroke-width="2" fill="none"/>
+            <defs>
+              <linearGradient id="heartGrad" x1="8" y1="8" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#C9A84C"/>
+                <stop offset="100%" stop-color="#9B59B6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <button class="btn-cta btn-cta-sm" onclick="calculateCompatibility()">Tính Hợp Duyên</button>
+      </div>
+
+      <div class="hd-person">
+        <div class="hd-avatar hd-avatar-2">
+          <svg viewBox="0 0 80 80" fill="none">
+            <circle cx="40" cy="30" r="18" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10 70c0-16.57 13.43-30 30-30s30 13.43 30 30" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3>Người Thứ Hai</h3>
+        <form class="hd-form">
+          <input type="text" placeholder="Họ và tên" class="hd-input" />
+          <input type="date" class="hd-input" />
+          <select class="hd-input">
+            <option value="">Giới tính</option>
+            <option>Nam</option>
+            <option>Nữ</option>
+          </select>
+        </form>
+      </div>
+    </div>
+
+    <!-- Result -->
+    <div class="hd-result" id="hdResult" style="display:none">
+      <div class="hd-score-ring">
+        <svg viewBox="0 0 200 200" class="score-svg">
+          <circle cx="100" cy="100" r="85" stroke="rgba(201,168,76,0.1)" stroke-width="14" fill="none"/>
+          <circle cx="100" cy="100" r="85" stroke="url(#scoreGrad)" stroke-width="14" fill="none"
+            stroke-dasharray="534" stroke-dashoffset="80" stroke-linecap="round"
+            transform="rotate(-90 100 100)" class="score-arc"/>
+          <defs>
+            <linearGradient id="scoreGrad" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#C9A84C"/>
+              <stop offset="100%" stop-color="#9B59B6"/>
+            </linearGradient>
+          </defs>
+          <text x="100" y="95" text-anchor="middle" fill="#C9A84C" font-size="36" font-weight="600" font-family="serif">85%</text>
+          <text x="100" y="120" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="12" font-family="sans-serif">Tương Hợp</text>
+        </svg>
+      </div>
+      <div class="hd-details">
+        <h3>Thiên Duyên Kết Hợp</h3>
+        <div class="hd-aspects">
+          <div class="aspect-item">
+            <span class="aspect-label">Tình Cảm</span>
+            <div class="aspect-bar"><div class="aspect-fill" style="--w:90%"></div></div>
+            <span class="aspect-score">90%</span>
+          </div>
+          <div class="aspect-item">
+            <span class="aspect-label">Sự Nghiệp</span>
+            <div class="aspect-bar"><div class="aspect-fill" style="--w:75%"></div></div>
+            <span class="aspect-score">75%</span>
+          </div>
+          <div class="aspect-item">
+            <span class="aspect-label">Tài Chính</span>
+            <div class="aspect-bar"><div class="aspect-fill" style="--w:80%"></div></div>
+            <span class="aspect-score">80%</span>
+          </div>
+          <div class="aspect-item">
+            <span class="aspect-label">Gia Đình</span>
+            <div class="aspect-bar"><div class="aspect-fill" style="--w:88%"></div></div>
+            <span class="aspect-score">88%</span>
+          </div>
+        </div>
+        <p class="hd-analysis">Đây là một mối duyên lành, có sự gặp gỡ sâu sắc về tâm hồn. Hai người bổ trợ cho nhau về ngũ hành — một người Hỏa mạnh, người kia Thủy đủ để điều hòa. Năm 2025 là thời điểm thuận lợi để xây dựng tổ ấm...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     HẠN VẬN 2025
+═══════════════════════════════════════════════════════ -->
+<section class="section section-alt" id="hanvan">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-badge">✦ Năm Ất Tỵ 2025 ✦</div>
+      <h2 class="section-title">Hạn Vận 2025</h2>
+      <p class="section-desc">Lịch may mắn hàng tháng, ngày hoàng đạo và giờ tốt trong năm Ất Tỵ</p>
+    </div>
+
+    <div class="hanvan-tabs">
+      <button class="hv-tab active" onclick="switchHanvan('calendar', this)">Lịch Tháng</button>
+      <button class="hv-tab" onclick="switchHanvan('lucky', this)">Ngày Tốt</button>
+      <button class="hv-tab" onclick="switchHanvan('hours', this)">Giờ Hoàng Đạo</button>
+    </div>
+
+    <!-- Calendar View -->
+    <div class="hv-content" id="hv-calendar">
+      <div class="hv-year-overview">
+        <div id="monthGrid" class="month-grid">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Lucky Days -->
+    <div class="hv-content" id="hv-lucky" style="display:none">
+      <div class="lucky-days-container" id="luckyDays">
+        <!-- populated by JS -->
+      </div>
+    </div>
+
+    <!-- Hours -->
+    <div class="hv-content" id="hv-hours" style="display:none">
+      <div class="hours-grid" id="hoursGrid">
+        <!-- populated by JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     AI CHATBOT
+═══════════════════════════════════════════════════════ -->
+<section class="section" id="ai-chat">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-badge">✦ Trí Tuệ Nhân Tạo ✦</div>
+      <h2 class="section-title">AI Luận Giải Lá Số</h2>
+      <p class="section-desc">Hỏi trực tiếp về lá số của bạn — AI sẽ luận giải bằng tiếng Việt tự nhiên</p>
+    </div>
+
+    <div class="chat-container" id="chatContainer">
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg chat-bot">
+          <div class="chat-avatar">✦</div>
+          <div class="chat-bubble">
+            <p>Chào bạn! Tôi là AI Thiên Mệnh — chuyên gia phân tích tử vi và chiêm tinh. Bạn muốn biết điều gì về lá số của mình? Tôi có thể giải thích về:</p>
+            <ul>
+              <li>🌟 Mệnh cung và tính cách</li>
+              <li>💫 Vận hạn tháng/năm 2025</li>
+              <li>❤️ Tình duyên và hôn nhân</li>
+              <li>💼 Sự nghiệp và tài lộc</li>
+              <li>🏥 Sức khỏe và phong thủy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="chat-suggestions">
+        <button class="suggest-btn" onclick="sendSuggestion(this)">Vận may tháng 6 của tôi?</button>
+        <button class="suggest-btn" onclick="sendSuggestion(this)">Tôi hợp nghề gì?</button>
+        <button class="suggest-btn" onclick="sendSuggestion(this)">Năm nay tình duyên thế nào?</button>
+        <button class="suggest-btn" onclick="sendSuggestion(this)">Ngày tốt để khởi nghiệp?</button>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="Hỏi về lá số của bạn..." onkeypress="handleChatKey(event)" />
+        <button class="chat-send" onclick="sendChatMessage()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     PREMIUM
+═══════════════════════════════════════════════════════ -->
+<section class="section section-alt" id="premium">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-badge">✦ Gói Dịch Vụ ✦</div>
+      <h2 class="section-title">Nâng Cấp Trải Nghiệm</h2>
+      <p class="section-desc">Mở khóa toàn bộ tính năng với gói Premium</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-badge-label">Miễn Phí</div>
+        <div class="pricing-price"><span class="price-amount">0</span><span class="price-unit">đ</span></div>
+        <ul class="pricing-features">
+          <li class="feature-ok">✓ Lá số tử vi cơ bản</li>
+          <li class="feature-ok">✓ Profile hoàng đạo</li>
+          <li class="feature-ok">✓ Hợp duyên đơn giản</li>
+          <li class="feature-no">✗ Luận giải chi tiết</li>
+          <li class="feature-no">✗ AI không giới hạn</li>
+          <li class="feature-no">✗ Hạn vận chi tiết</li>
+        </ul>
+        <button class="btn-secondary">Đang dùng</button>
+      </div>
+
+      <div class="pricing-card pricing-featured">
+        <div class="pricing-ribbon">Phổ Biến Nhất</div>
+        <div class="pricing-badge-label">Premium</div>
+        <div class="pricing-price"><span class="price-amount">199K</span><span class="price-unit">/tháng</span></div>
+        <ul class="pricing-features">
+          <li class="feature-ok">✓ Tất cả tính năng miễn phí</li>
+          <li class="feature-ok">✓ Luận giải 12 cung chi tiết</li>
+          <li class="feature-ok">✓ AI hỏi đáp không giới hạn</li>
+          <li class="feature-ok">✓ Hạn vận từng ngày 2025</li>
+          <li class="feature-ok">✓ Hợp duyên chuyên sâu</li>
+          <li class="feature-no">✗ Tư vấn 1-1 chuyên gia</li>
+        </ul>
+        <button class="btn-cta" onclick="openPayment('premium')">Đăng Ký Ngay</button>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-badge-label">VIP Năm</div>
+        <div class="pricing-price"><span class="price-amount">1.5M</span><span class="price-unit">/năm</span></div>
+        <ul class="pricing-features">
+          <li class="feature-ok">✓ Tất cả tính năng Premium</li>
+          <li class="feature-ok">✓ Tư vấn 1-1 với chuyên gia</li>
+          <li class="feature-ok">✓ Báo cáo PDF cá nhân hóa</li>
+          <li class="feature-ok">✓ Cập nhật vận hạn hàng tuần</li>
+          <li class="feature-ok">✓ Phong thủy nhà ở</li>
+          <li class="feature-ok">✓ Hỗ trợ ưu tiên 24/7</li>
+        </ul>
+        <button class="btn-secondary" onclick="openPayment('vip')">Chọn VIP</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     BLOG
+═══════════════════════════════════════════════════════ -->
+<section class="section" id="blog">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-badge">✦ Kiến Thức ✦</div>
+      <h2 class="section-title">Blog Chiêm Tinh</h2>
+    </div>
+    <div class="blog-grid" id="blogGrid">
+      <!-- populated by JS -->
+    </div>
+    <div class="text-center mt-8">
+      <button class="btn-secondary">Xem Tất Cả Bài Viết →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════ -->
+<footer class="footer" id="login">
+  <div class="footer-stars" aria-hidden="true">
+    <canvas id="footerStars"></canvas>
+  </div>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <a href="#hero" class="nav-logo footer-logo">
+        <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="18" stroke="url(#fLogoGrad)" stroke-width="1.5"/>
+          <circle cx="20" cy="20" r="10" stroke="url(#fLogoGrad)" stroke-width="1"/>
+          <circle cx="20" cy="20" r="3" fill="url(#fLogoGrad)"/>
+          <line x1="20" y1="2" x2="20" y2="8" stroke="url(#fLogoGrad)" stroke-width="1.5"/>
+          <line x1="20" y1="32" x2="20" y2="38" stroke="url(#fLogoGrad)" stroke-width="1.5"/>
+          <line x1="2" y1="20" x2="8" y2="20" stroke="url(#fLogoGrad)" stroke-width="1.5"/>
+          <line x1="32" y1="20" x2="38" y2="20" stroke="url(#fLogoGrad)" stroke-width="1.5"/>
+          <defs>
+            <linearGradient id="fLogoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#C9A84C"/>
+              <stop offset="100%" stop-color="#9B59B6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>Thiên Mệnh</span>
+      </a>
+      <p>Nền tảng chiêm tinh học Đông Tây kết hợp, ứng dụng trí tuệ nhân tạo để mang đến luận giải chính xác và sâu sắc nhất.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="YouTube">▶️</a>
+        <a href="#" aria-label="TikTok">🎵</a>
+        <a href="#" aria-label="Zalo">💬</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Dịch Vụ</h4>
+      <a href="#tuvi">Lá Số Tử Vi</a>
+      <a href="#hoangdao">Cung Hoàng Đạo</a>
+      <a href="#hopduyen">Hợp Duyên</a>
+      <a href="#hanvan">Hạn Vận 2025</a>
+      <a href="#ai-chat">AI Luận Giải</a>
+    </div>
+    <div class="footer-links">
+      <h4>Công Ty</h4>
+      <a href="#">Về Chúng Tôi</a>
+      <a href="#">Blog</a>
+      <a href="#">Chuyên Gia</a>
+      <a href="#">Liên Hệ</a>
+      <a href="#">Tuyển Dụng</a>
+    </div>
+    <div class="footer-links">
+      <h4>Hỗ Trợ</h4>
+      <a href="#">Câu Hỏi Thường Gặp</a>
+      <a href="#">Chính Sách Bảo Mật</a>
+      <a href="#">Điều Khoản Dịch Vụ</a>
+      <a href="#">Chính Sách Hoàn Tiền</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Thiên Mệnh. Tất cả quyền được bảo lưu.</p>
+    <p>Được xây dựng với ✦ và tri thức ngàn năm</p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════
+     MODALS
+═══════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="resultModal" style="display:none" onclick="closeModal('resultModal')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal('resultModal')">✕</button>
+    <div class="modal-header">
+      <h2>Lá Số Của Bạn</h2>
+      <p id="modalSubtitle">Đang phân tích...</p>
+    </div>
+    <div class="modal-body" id="modalBody">
+      <div class="loading-orb">
+        <div class="orb-ring"></div>
+        <div class="orb-ring orb-ring-2"></div>
+        <div class="orb-core">✦</div>
+      </div>
+      <p class="loading-text">Đang luận giải thiên mệnh của bạn...</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="paymentModal" style="display:none" onclick="closeModal('paymentModal')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal('paymentModal')">✕</button>
+    <div class="modal-header">
+      <h2>Thanh Toán</h2>
+      <p>Chọn phương thức thanh toán</p>
+    </div>
+    <div class="modal-body">
+      <div class="payment-methods">
+        <button class="payment-btn">💳 Thẻ tín dụng / ghi nợ</button>
+        <button class="payment-btn">🏦 Chuyển khoản ngân hàng</button>
+        <button class="payment-btn">📱 Ví điện tử (Momo, ZaloPay)</button>
+        <button class="payment-btn">💰 VNPAY QR</button>
+      </div>
+      <p class="payment-note">Bảo mật SSL 256-bit · Hoàn tiền trong 7 ngày</p>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
