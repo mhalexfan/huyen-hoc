@@ -22,6 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/tuvi_chart.css" />
 </head>
 <body class="dark-mode" data-theme="dark">
 
@@ -50,7 +51,7 @@
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#hero" class="nav-link active">Trang Chủ</a>
-      <a href="#tuvi" class="nav-link">Lá Số Tử Vi</a>
+      <a href="#la-so" class="nav-link">Lá Số Tử Vi</a>
       <a href="#hoangdao" class="nav-link">Hoàng Đạo</a>
       <a href="#hopduyen" class="nav-link">Hợp Duyên</a>
       <a href="#hanvan" class="nav-link">Hạn Vận</a>
@@ -186,7 +187,54 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
-     LÁ SỐ TỬ VI
+     LÁ SỐ TỬ VI TƯƠNG TÁC
+═══════════════════════════════════════════════════════ -->
+<section class="section section-alt" id="la-so">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-badge">✦ Lá Số Cá Nhân ✦</div>
+      <h2 class="section-title">Xem Lá Số Tử Vi</h2>
+      <p class="section-desc">Nhập ngày sinh để xem bảng 14 chính tinh, sao phụ và tứ hóa của bạn</p>
+    </div>
+
+    <div class="laso-form-wrapper">
+      <div class="laso-form-title">✦ Thông Tin Ngày Sinh ✦</div>
+      <form id="laso-form">
+        <div class="laso-form-grid">
+          <div class="laso-field">
+            <label>Năm sinh (dương lịch)</label>
+            <input type="number" id="laso-year" min="1900" max="2100" placeholder="1990" required />
+          </div>
+          <div class="laso-field">
+            <label>Tháng sinh</label>
+            <input type="number" id="laso-month" min="1" max="12" placeholder="5" required />
+          </div>
+          <div class="laso-field">
+            <label>Ngày sinh</label>
+            <input type="number" id="laso-day" min="1" max="31" placeholder="15" required />
+          </div>
+          <div class="laso-field">
+            <label>Giờ sinh (0–23)</label>
+            <input type="number" id="laso-hour" min="0" max="23" value="12" />
+          </div>
+          <div class="laso-field form-full">
+            <label>Giới tính</label>
+            <select id="laso-gender">
+              <option value="nam">Nam</option>
+              <option value="nu">Nữ</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="laso-submit">✦ An Lá Số</button>
+      </form>
+    </div>
+
+    <div id="tuvi-board-container" class="tuvi-board-container"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     LÁ SỐ TỬ VI (demo tĩnh)
 ═══════════════════════════════════════════════════════ -->
 <section class="section" id="tuvi">
   <div class="section-container">
@@ -628,7 +676,7 @@
     </div>
     <div class="footer-links">
       <h4>Dịch Vụ</h4>
-      <a href="#tuvi">Lá Số Tử Vi</a>
+      <a href="#la-so">Lá Số Tử Vi</a>
       <a href="#hoangdao">Cung Hoàng Đạo</a>
       <a href="#hopduyen">Hợp Duyên</a>
       <a href="#hanvan">Hạn Vận 2025</a>
@@ -697,6 +745,8 @@
 </div>
 
 <script src="assets/js/tuvi_data.js"></script>
+<script src="assets/js/tuvi_engine.js"></script>
+<script src="assets/js/tuvi_ui.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

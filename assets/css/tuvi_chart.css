@@ -1,0 +1,365 @@
+/* ═══════════════════════════════════════════════════════
+   THIÊN MỆNH — Tử Vi Chart Styles
+═══════════════════════════════════════════════════════ */
+
+/* ── Section wrapper ── */
+#la-so { padding: 5rem 0; }
+
+.laso-form-wrapper {
+  max-width: 680px;
+  margin: 0 auto 3rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+}
+
+.laso-form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--gold, #C9A84C);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.laso-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.laso-form-grid .form-full { grid-column: 1 / -1; }
+
+.laso-field label {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.laso-field input,
+.laso-field select {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+
+.laso-field input:focus,
+.laso-field select:focus {
+  outline: none;
+  border-color: rgba(201,168,76,0.6);
+}
+
+.laso-field select option { background: #1a1a2e; }
+
+.laso-submit {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.85rem;
+  background: linear-gradient(135deg, #C9A84C, #9B59B6);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.laso-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+.laso-submit:active { transform: translateY(0); }
+
+/* ── Board container ── */
+.tuvi-board-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tuvi-meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+}
+
+.meta-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.meta-chip__label {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.meta-chip__value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  color: #C9A84C;
+  font-weight: 600;
+}
+
+/* ── 4×4 board grid ── */
+.tuvi-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, minmax(130px, auto));
+  gap: 3px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Center 2×2 decoration */
+.tuvi-board__center {
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+  background: rgba(10,8,30,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.center-logo {
+  width: 64px; height: 64px;
+  opacity: 0.3;
+}
+
+.center-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: rgba(201,168,76,0.5);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ── Palace cells ── */
+.palace {
+  background: rgba(15,12,40,0.85);
+  padding: 0.55rem 0.6rem 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  position: relative;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  overflow: hidden;
+}
+
+.palace:hover { background: rgba(201,168,76,0.07); }
+.palace.is-menh { background: rgba(201,168,76,0.06); }
+.palace.is-menh::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid rgba(201,168,76,0.35);
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+/* Palace header */
+.palace__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
+}
+
+.palace__chi {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.35);
+  font-weight: 500;
+}
+
+.palace__cung {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(201,168,76,0.85);
+}
+
+.palace__cung.is-menh-cung { color: #C9A84C; font-size: 0.9rem; }
+
+/* ── Star badges ── */
+.palace__stars { display: flex; flex-wrap: wrap; gap: 3px; flex: 1; }
+
+.star-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.15s;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+.star-badge:hover { filter: brightness(1.3); transform: scale(1.05); }
+
+/* Chính tinh */
+.star-badge.chinh-cat   { background: rgba(201,168,76,0.12); border-color: rgba(201,168,76,0.35); color: #e8c96e; }
+.star-badge.chinh-hung  { background: rgba(220,60,60,0.1);   border-color: rgba(220,60,60,0.3);   color: #e87070; }
+.star-badge.chinh-mixed { background: rgba(155,89,182,0.12); border-color: rgba(155,89,182,0.35); color: #c39be0; }
+
+/* Sao phụ */
+.star-badge.phu-cat    { background: rgba(76,175,80,0.08);  border-color: rgba(76,175,80,0.25);  color: #88d08a; }
+.star-badge.phu-hung   { background: rgba(244,67,54,0.08);  border-color: rgba(244,67,54,0.25);  color: #f07070; }
+.star-badge.phu-trung  { background: rgba(255,255,255,0.05);border-color: rgba(255,255,255,0.12);color: rgba(255,255,255,0.55); }
+
+/* Miếu/Hãm dots */
+.star-badge::after { font-size: 0.55rem; }
+.star-badge.mieu::after { content: '▲'; color: #C9A84C; margin-left: 1px; }
+.star-badge.ham::after  { content: '▽'; color: #e87070; margin-left: 1px; }
+
+/* ── Tứ Hóa markers ── */
+.palace__tuHoa { display: flex; flex-wrap: wrap; gap: 3px; margin-top: auto; }
+
+.tuhoa-badge {
+  font-size: 0.6rem;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.tuhoa-badge.loc  { background: rgba(201,168,76,0.25); color: #f0d080; }
+.tuhoa-badge.quyen{ background: rgba(155,89,182,0.3);  color: #d4a8f5; }
+.tuhoa-badge.khoa { background: rgba(33,150,243,0.25); color: #80c8f8; }
+.tuhoa-badge.ky   { background: rgba(244,67,54,0.25);  color: #f08080; }
+
+/* ── Detail panel ── */
+.star-detail-panel {
+  max-width: 900px;
+  margin: 1.5rem auto 0;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  display: none;
+  animation: fadeSlide 0.25s ease;
+}
+.star-detail-panel.visible { display: block; }
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sdp-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.sdp-icon {
+  width: 44px; height: 44px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.sdp-icon.cat  { background: rgba(201,168,76,0.15); }
+.sdp-icon.hung { background: rgba(220,60,60,0.15);  }
+.sdp-icon.trung{ background: rgba(155,89,182,0.15); }
+
+.sdp-title { flex: 1; }
+.sdp-name  { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #C9A84C; }
+.sdp-sub   { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-top: 2px; }
+
+.sdp-close {
+  background: none; border: none; color: rgba(255,255,255,0.3);
+  font-size: 1.2rem; cursor: pointer; padding: 4px;
+  transition: color 0.2s;
+}
+.sdp-close:hover { color: rgba(255,255,255,0.7); }
+
+.sdp-body { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+.sdp-section h4 {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.35); margin-bottom: 0.5rem;
+}
+
+.sdp-desc { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.7; }
+
+.sdp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.sdp-tag  {
+  font-size: 0.72rem; padding: 3px 9px; border-radius: 20px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.6);
+}
+
+/* ── Tổ Hợp panel ── */
+.tohop-list {
+  max-width: 900px;
+  margin: 1.5rem auto 0;
+}
+
+.tohop-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: #C9A84C;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tohop-grid { display: flex; flex-direction: column; gap: 0.6rem; }
+
+.tohop-card {
+  background: rgba(255,255,255,0.03);
+  border-left: 3px solid;
+  border-radius: 0 8px 8px 0;
+  padding: 0.75rem 1rem;
+}
+.tohop-card.cat  { border-color: #C9A84C; }
+.tohop-card.hung { border-color: #e87070; }
+.tohop-card.mixed{ border-color: #9B59B6; }
+
+.tohop-card__name { font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.85); margin-bottom: 0.25rem; }
+.tohop-card__desc { font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .tuvi-board {
+    grid-template-rows: repeat(4, minmax(100px, auto));
+    font-size: 0.85em;
+  }
+  .laso-form-grid { grid-template-columns: 1fr; }
+  .sdp-body { grid-template-columns: 1fr; }
+  .palace { min-height: 100px; padding: 0.4rem; }
+  .palace__cung { font-size: 0.75rem; }
+  .star-badge { font-size: 0.62rem; padding: 1px 4px; }
+}
+
+@media (max-width: 480px) {
+  .tuvi-board { gap: 2px; }
+  .palace { padding: 0.3rem 0.35rem; min-height: 88px; }
+  .palace__chi { font-size: 0.6rem; }
+  .palace__cung { font-size: 0.68rem; }
+  .star-badge { font-size: 0.58rem; }
+}
